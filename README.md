@@ -1,5 +1,10 @@
 # XIQ - Sync Externally Managed VIQ PPSK Users
 ## VIQ_PPSK_Sync.py
+
+_The software is provided as-is and [Extreme Networks](http://www.extremenetworks.com/) has no obligation to provide maintenance, support, updates, enhancements, or modifications. Any support provided by [Extreme Networks](http://www.extremenetworks.com/) is at its sole discretion._
+
+_Issues and/or bug fixes may be reported on in the Issues for this repository._
+
 ### Purpose
 This script will collect the PPSK Users from a the main VIQ account and create those same PPSK Users in all Externally Managed VIQs. The name of the user group needs to be the same on all managed accounts, including the viq they export from. If you have a specific Managed VIQ(s) you want to skip you can add the Name of the VIQ to the script to be excluded.
 ## User Input Data
