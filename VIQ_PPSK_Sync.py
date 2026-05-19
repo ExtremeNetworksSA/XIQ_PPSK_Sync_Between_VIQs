@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
 import json
 import requests
-import getpass
 import logging
 import os
-import pandas as pd
-import numpy as np
-from pprint import pprint
 
 
 ####################################
@@ -262,10 +258,15 @@ def main():
     ## get external accounts ##
     ex_accts = get_external_accounts()
     for account in ex_accts:
-        print(f"\nStarting VIQ {account['alias']}...\n")
         if account['alias'] in exclude_ex_accounts:
             print(f"The {account['alias']} account is in the excluded list and will be skipped")
             continue
+        response = input(f"Would you like to switch to account {account['alias']}: ")
+        print(response)
+        if response.lower() != 'y' and response.lower() != 'yes':
+            print(f"skipping VIQ {account['alias']}...\n")
+            continue
+        print(f"\nStarting VIQ {account['alias']}...\n")
         try:
             switch_XIQ_Account(account['id'])
         except TypeError as e:
